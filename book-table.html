@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        import { createClient } from '@supabase/supabase-js'
+        const supabaseUrl = 'https://zbdfnquswzpzsbiidtmt.supabase.co'
+        const supabaseKey = process.env.SUPABASE_KEY
+        const supabase = createClient(supabaseUrl, supabaseKey)
+
+        let { data: books, error } = await supabase
+        .from('books')
+        .select('*')
+    </script>
+</head>
+<body>
+    <table id="books">
+
+    </table>
+</body>
+</html>
